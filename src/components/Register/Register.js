@@ -1,14 +1,33 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import "./Login.scss";
 
-class Login extends Component {
+import "./Register.scss";
+
+class Register extends React.Component {
   render() {
     return (
       <div className="wrapper">
         <form>
           <div className="form-group header">
-            <span>Sign In</span>
+            <span>Sign Up</span>
+          </div>
+          <div className="form-row">
+            <div className="form-group col">
+              <label className="form-label">First Name</label>
+              <input
+                placeholder="Enter First Name"
+                type="text"
+                className="form-control"
+              />
+            </div>
+            <div className="form-group col">
+              <label className="form-label">Last Name</label>
+              <input
+                placeholder="Enter Last Name"
+                type="text"
+                className="form-control"
+              />
+            </div>
           </div>
           <div className="form-group">
             <label className="form-label">Email Address</label>
@@ -29,23 +48,25 @@ class Login extends Component {
           <div className="form-group">
             <div className="form-check">
               <input type="checkbox" className="form-check-input" />
-              <label className="form-check-label">Remember me</label>
+              <label className="form-check-label">
+                I want to receive marketing promotions and updates via email.
+              </label>
             </div>
           </div>
           <div className="form-group">
             <button type="submit" class="btn btn-block btn-primary">
-              SIGN IN
+              SIGN UP
             </button>
           </div>
           <div className="form-row bottom-group">
-            <div className="col"><span>Forgot Password</span></div>  
+            <div className="col"></div>  
             <div className="form-group col">
-            <span className="float-right">
-              Don't have an account?
-              <Link to="/sign-up" className="nav-link">
-                Sign Up
-              </Link>
-            </span>
+              <span className="float-right">
+                Already have an account?
+                <Link to="/sign-in" className="nav-link">
+                  Sign In
+                </Link>
+              </span>
             </div>
           </div>
         </form>
@@ -54,4 +75,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Register;
