@@ -12,8 +12,7 @@ class Login extends Component {
     formErrors: {
       email: { isValid: true, message: "" },
       password: { isValid: true, message: "" }
-    },
-    formValid: true
+    }
   };
   /*********************Constructor*********************/
 
@@ -58,29 +57,27 @@ class Login extends Component {
     }
 
     this.setState({
-      formErrors: formErrors,
-      formValid: formErrors.email.isValid && formErrors.password.isValid
+      formErrors: formErrors
     });
-
-    console.log(this.state);
   }
 
   // Retrive value from Input
   changeHandler1 = (data, event) => {
-    console.log(data);
     this.setState({ [event.target.name]: event.target.value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.valid) {
+    if (
+      this.state.formErrors.email.isValid &&
+      this.state.formErrors.password.isValid
+    ) {
       console.log(this.state);
     } else {
       alert("Form Invalid");
     }
   };
 
-  valid = () => {};
   /*********************Form Handler*********************/
 
   /*********************Render Mrthod*********************/
@@ -141,9 +138,7 @@ class Login extends Component {
             </div>
           </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-block btn-primary">
-              SIGN IN
-            </button>
+            <input type="submit" className="btn btn-block btn-primary" value="SIGN IN"/>
           </div>
           <div className="form-row bottom-group">
             <div className="col">
