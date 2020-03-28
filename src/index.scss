@@ -1,6 +1,6 @@
 @import "bootstrap/scss/bootstrap.scss";
 
-body{
+body {
   font-size: 14px;
 }
 
@@ -38,8 +38,20 @@ body{
         padding-right: 0px;
       }
     }
-    .form-check-label{
+    .form-check-label {
       font-size: 13px;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+      padding: 4px 0px 0 4px;
+      position: absolute;
+      right: 32px;
+    }
+    .required:after {
+      content: "*";
+      color: red;
     }
   }
 }
