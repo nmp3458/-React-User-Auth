@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./Register.scss";
 
+import {RoutePath} from "../../constants/common";
+
 class Register extends React.Component {
   render() {
     return (
@@ -54,7 +56,7 @@ class Register extends React.Component {
             </div>
           </div>
           <div className="form-group">
-            <button type="submit" class="btn btn-block btn-primary">
+            <button type="submit" className="btn btn-block btn-primary">
               SIGN UP
             </button>
           </div>
@@ -63,7 +65,7 @@ class Register extends React.Component {
             <div className="form-group col">
               <span className="float-right">
                 Already have an account?
-                <Link to="/sign-in" className="nav-link">
+                <Link to={RoutePath.Login} className="nav-link">
                   Sign In
                 </Link>
               </span>

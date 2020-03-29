@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import "./Login.scss";
+
+import { RoutePath } from "../../constants/common";
 
 class Login extends Component {
   /*********************Constructor*********************/
@@ -12,7 +14,8 @@ class Login extends Component {
     formErrors: {
       email: { isValid: true, message: "" },
       password: { isValid: true, message: "" }
-    }
+    },
+    isValidForm: false
   };
   /*********************Constructor*********************/
 
@@ -57,7 +60,8 @@ class Login extends Component {
     }
 
     this.setState({
-      formErrors: formErrors
+      formErrors: formErrors,
+      isValidForm: formErrors.password.isValid && formErrors.email.isValid
     });
   }
 
@@ -68,11 +72,13 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (
-      this.state.formErrors.email.isValid &&
-      this.state.formErrors.password.isValid
-    ) {
-      console.log(this.state);
+
+    const { history } = this.props;
+    const { email, password } = this.state;
+    console.log(email, password);
+
+    if (this.state.isValidForm) {
+      history.push(RoutePath.Dashboard);
     } else {
       alert("Form Invalid");
     }
@@ -82,6 +88,7 @@ class Login extends Component {
 
   /*********************Render Mrthod*********************/
   render() {
+    const formErrors = this.state.formErrors;
     return (
       <div className="wrapper">
         <form onSubmit={this.handleSubmit}>
@@ -91,36 +98,35 @@ class Login extends Component {
           <div className="form-group">
             <label className="form-label required">Email Address</label>
             <input
-              className="form-control"
               type="text"
               name="email"
-              required
               value={this.state.email}
               placeholder="Please Enter Email"
+              className={`form-control ${this.state.email ? "" : "mandatory"}`}
               onChange={this.changeHandler}
             />
             {this.state.email ? (
               <div className="error">
-                {!this.state.formErrors.email.isValid &&
-                  this.state.formErrors.email.message}
+                {!formErrors.email.isValid && formErrors.email.message}
               </div>
             ) : null}
           </div>
           <div className="form-group">
             <label className="form-label required">Password</label>
             <input
-              className="form-control"
               type="password"
               name="password"
               value={this.state.password}
               placeholder="Please Enter Password"
+              className={`form-control ${
+                this.state.password ? "" : "mandatory"
+              }`}
               onChange={this.changeHandler}
               //onChange={this.changeHandler.bind(this, this.state.password)}
             />
             {this.state.password ? (
               <div className="error">
-                {!this.state.formErrors.password.isValid &&
-                  this.state.formErrors.password.message}
+                {!formErrors.password.isValid && formErrors.password.message}
               </div>
             ) : (
               ""
@@ -138,7 +144,12 @@ class Login extends Component {
             </div>
           </div>
           <div className="form-group">
-            <input type="submit" className="btn btn-block btn-primary" value="SIGN IN"/>
+            <input
+              type="submit"
+              className="btn btn-block btn-primary"
+              value="SIGN IN"
+              disabled={!this.state.isValidForm}
+            />
           </div>
           <div className="form-row bottom-group">
             <div className="col">
@@ -147,7 +158,7 @@ class Login extends Component {
             <div className="form-group col">
               <span className="float-right">
                 Don't have an account?
-                <Link to="/sign-up" className="nav-link">
+                <Link to={RoutePath.Register} className="nav-link">
                   Sign Up
                 </Link>
               </span>

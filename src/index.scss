@@ -1,4 +1,5 @@
 @import "bootstrap/scss/bootstrap.scss";
+@import "./common/css/theme.scss";
 
 body {
   font-size: 14px;
@@ -16,7 +17,7 @@ body {
 
   form {
     padding: 24px 32px 0px 32px;
-    background-color: #fff;
+    background-color: $white;
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
     border-radius: 10px;
 
@@ -25,7 +26,7 @@ body {
       span {
         font-weight: bold;
         font-size: 18px;
-        color: #f28b66;
+        color: $tomato-red;
       }
     }
     .bottom-group {
@@ -43,15 +44,19 @@ body {
     }
 
     .error {
-      color: red;
+      color: $red;
       font-size: 12px;
       padding: 4px 0px 0 4px;
       position: absolute;
       right: 32px;
     }
-    .required:after {
+    label.required:after {
       content: "*";
-      color: red;
+      color: $red;
+    }
+
+    .mandatory{
+      border:1px solid $red;
     }
   }
 }
