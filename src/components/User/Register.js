@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./Register.scss";
-
 import {RoutePath} from "../../constants/common";
 
 class Register extends React.Component {
@@ -11,7 +9,7 @@ class Register extends React.Component {
       <div className="wrapper">
         <form>
           <div className="form-group header">
-            <span>Sign Up</span>
+            <span>Registration</span>
           </div>
           <div className="form-row">
             <div className="form-group col">

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
-
-import "./Login.scss";
+import { Link } from "react-router-dom";
 
 import { RoutePath } from "../../constants/common";
 
@@ -12,10 +10,9 @@ class Login extends Component {
     password: "",
     remember: false,
     formErrors: {
-      email: { isValid: true, message: "" },
-      password: { isValid: true, message: "" }
-    },
-    isValidForm: false
+      email: { isValid: false, message: "" },
+      password: { isValid: false, message: "" }
+    }
   };
   /*********************Constructor*********************/
 
@@ -60,8 +57,7 @@ class Login extends Component {
     }
 
     this.setState({
-      formErrors: formErrors,
-      isValidForm: formErrors.password.isValid && formErrors.email.isValid
+      formErrors: formErrors
     });
   }
 
@@ -77,7 +73,10 @@ class Login extends Component {
     const { email, password } = this.state;
     console.log(email, password);
 
-    if (this.state.isValidForm) {
+    if (
+      this.state.formErrors.password.isValid &&
+      this.state.formErrors.email.isValid
+    ) {
       history.push(RoutePath.Dashboard);
     } else {
       alert("Form Invalid");
@@ -93,7 +92,7 @@ class Login extends Component {
       <div className="wrapper">
         <form onSubmit={this.handleSubmit}>
           <div className="form-group header">
-            <span>Sign In</span>
+            <span>Member Login</span>
           </div>
           <div className="form-group">
             <label className="form-label required">Email Address</label>
@@ -148,7 +147,9 @@ class Login extends Component {
               type="submit"
               className="btn btn-block btn-primary"
               value="SIGN IN"
-              disabled={!this.state.isValidForm}
+              disabled={
+                !(formErrors.password.isValid && formErrors.email.isValid)
+              }
             />
           </div>
           <div className="form-row bottom-group">

@@ -10,9 +10,9 @@ import "./App.scss";
 
 import { RoutePath } from "./constants/common";
 
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
-import Dashboard from "./components/Dashboard/Dashboard";
+import {Login, Register } from './components/User';
+
+import Dashboard from "./components/Layout/Dashboard";
 
 function App() {
   return (
@@ -23,8 +23,8 @@ function App() {
           <Route path={RoutePath.Login} component={Login} />
           <Route path={RoutePath.Register} component={Register} />
           <Route path={RoutePath.Dashboard} component={Dashboard} />
-          <Redirect from="*" to="/" />
         </Switch>
+        <Redirect to="/" />
       </Router>
     </div>
   );
