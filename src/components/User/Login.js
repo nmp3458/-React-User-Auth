@@ -1,17 +1,17 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import { RoutePath } from "../../constants/common";
+import { RoutePath } from '../constants';
 
 class Login extends Component {
   /*********************Constructor*********************/
   state = {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
     remember: false,
     formErrors: {
-      email: { isValid: false, message: "" },
-      password: { isValid: false, message: "" }
+      email: { isValid: false, message: '' },
+      password: { isValid: false, message: '' }
     }
   };
   /*********************Constructor*********************/
@@ -20,7 +20,7 @@ class Login extends Component {
   changeHandler = event => {
     const name = event.target.name;
     const value =
-      event.target.type === "checkbox"
+      event.target.type === 'checkbox'
         ? event.target.checked
         : event.target.value;
 
@@ -38,19 +38,19 @@ class Login extends Component {
     let formErrors = this.state.formErrors;
 
     switch (fieldName) {
-      case "email":
+      case 'email':
         formErrors.email.isValid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
           value
         );
         formErrors.email.message = formErrors.email.isValid
-          ? ""
-          : " is invalid";
+          ? ''
+          : ' is invalid';
         break;
-      case "password":
+      case 'password':
         formErrors.password.isValid = value.length >= 6;
         formErrors.password.message = formErrors.password.isValid
-          ? ""
-          : " is too short";
+          ? ''
+          : ' is too short';
         break;
       default:
         break;
@@ -73,13 +73,15 @@ class Login extends Component {
     const { email, password } = this.state;
     console.log(email, password);
 
+    history.push(RoutePath.Dashboard);
+
     if (
       this.state.formErrors.password.isValid &&
       this.state.formErrors.email.isValid
     ) {
       history.push(RoutePath.Dashboard);
     } else {
-      alert("Form Invalid");
+      console.log('Form Invalid');
     }
   };
 
@@ -89,77 +91,77 @@ class Login extends Component {
   render() {
     const formErrors = this.state.formErrors;
     return (
-      <div className="wrapper">
+      <div className='wrapper'>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group header">
+          <div className='form-group header'>
             <span>Member Login</span>
           </div>
-          <div className="form-group">
-            <label className="form-label required">Email Address</label>
+          <div className='form-group'>
+            <label className='form-label required'>Email Address</label>
             <input
-              type="text"
-              name="email"
+              type='text'
+              name='email'
               value={this.state.email}
-              placeholder="Please Enter Email"
-              className={`form-control ${this.state.email ? "" : "mandatory"}`}
+              placeholder='Please Enter Email'
+              className={`form-control ${this.state.email ? '' : 'mandatory'}`}
               onChange={this.changeHandler}
             />
             {this.state.email ? (
-              <div className="error">
+              <div className='error'>
                 {!formErrors.email.isValid && formErrors.email.message}
               </div>
             ) : null}
           </div>
-          <div className="form-group">
-            <label className="form-label required">Password</label>
+          <div className='form-group'>
+            <label className='form-label required'>Password</label>
             <input
-              type="password"
-              name="password"
+              type='password'
+              name='password'
               value={this.state.password}
-              placeholder="Please Enter Password"
+              placeholder='Please Enter Password'
               className={`form-control ${
-                this.state.password ? "" : "mandatory"
+                this.state.password ? '' : 'mandatory'
               }`}
               onChange={this.changeHandler}
               //onChange={this.changeHandler.bind(this, this.state.password)}
             />
             {this.state.password ? (
-              <div className="error">
+              <div className='error'>
                 {!formErrors.password.isValid && formErrors.password.message}
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
-          <div className="form-group">
-            <div className="form-check">
+          <div className='form-group'>
+            <div className='form-check'>
               <input
-                type="checkbox"
-                className="form-check-input"
-                name="remember"
+                type='checkbox'
+                className='form-check-input'
+                name='remember'
                 onChange={this.changeHandler}
               />
-              <label className="form-check-label">Remember me</label>
+              <label className='form-check-label'>Remember me</label>
             </div>
           </div>
-          <div className="form-group">
+          <div className='form-group'>
             <input
-              type="submit"
-              className="btn btn-block btn-primary"
-              value="SIGN IN"
-              disabled={
-                !(formErrors.password.isValid && formErrors.email.isValid)
-              }
+              type='submit'
+              className='btn btn-block btn-primary'
+              value='SIGN IN'
+              // disabled={
+              //   !(formErrors.password.isValid && formErrors.email.isValid)
+              // }
             />
           </div>
-          <div className="form-row bottom-group">
-            <div className="col">
+          <div className='form-row bottom-group'>
+            <div className='col'>
               <span>Forgot Password</span>
             </div>
-            <div className="form-group col">
-              <span className="float-right">
+            <div className='form-group col'>
+              <span className='float-right'>
                 Don't have an account?
-                <Link to={RoutePath.Register} className="nav-link">
+                <Link to={RoutePath.Register} className='nav-link'>
                   Sign Up
                 </Link>
               </span>

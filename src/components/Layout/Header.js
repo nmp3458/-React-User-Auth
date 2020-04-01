@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-
 import Dropdown from 'react-bootstrap/Dropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
+
+import CustomIcon from '../CustomIcon';
 
 class Header extends Component {
   render() {
@@ -10,21 +9,15 @@ class Header extends Component {
       <div className='dash_header'>
         <div className='container'>
           <div className='d-flex header-nav'>
-            <a className='header-desktop'></a>
+            <a href="" className='header-desktop'>header-desktop</a>
             <div className='d-flex ml-auto'>
+              <div>
+                <CustomIcon icon='bell' iColor='red'/>
+              </div>
               <Dropdown>
-                <Dropdown.Toggle id='dropdown-basic'>
-                  <FontAwesomeIcon icon={faBell} />
-                </Dropdown.Toggle>
-
+                <Dropdown.Toggle as={CustomIcon} icon='bell'></Dropdown.Toggle>
                 <Dropdown.Menu>
                   <Dropdown.Item href='#/action-1'>Action</Dropdown.Item>
-                  <Dropdown.Item href='#/action-2'>
-                    Another action
-                  </Dropdown.Item>
-                  <Dropdown.Item href='#/action-3'>
-                    Something else
-                  </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </div>
