@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {RoutePath} from "../../constants/common";
+import { RoutePath } from "../constants";
 
 class Register extends React.Component {
   render() {

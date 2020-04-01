@@ -1,30 +1,30 @@
-import React from "react";
+import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
-} from "react-router-dom";
+} from 'react-router-dom';
+import './components/fontawesome';
 
-import "./App.scss";
+import './App.scss';
 
-import { RoutePath } from "./constants/common";
+import { RoutePath } from './components/constants';
 
-import {Login, Register } from './components/User';
-
-import Dashboard from "./components/Layout/Dashboard";
+import { Login, Register } from './components/User';
+import { Dashboard } from './components/Layout';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path='/' component={Login} />
           <Route path={RoutePath.Login} component={Login} />
           <Route path={RoutePath.Register} component={Register} />
           <Route path={RoutePath.Dashboard} component={Dashboard} />
         </Switch>
-        <Redirect to="/" />
+        <Redirect to='/' />
       </Router>
     </div>
   );
