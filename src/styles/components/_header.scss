@@ -1,0 +1,28 @@
+@import '../colors';
+
+.rc_header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid transparent;
+    background: linear-gradient(to right, #765be6, #03adf7);
+  
+    .header-desktop {
+      display: block;
+      position: absolute;
+      width: 150px;
+      height: 40px;
+      margin-top: 2px;
+      background: url(/assets/img/logo-white.png);
+      background-repeat: no-repeat;
+  
+      a {
+        color: #765be6;
+      }
+    }
+  }

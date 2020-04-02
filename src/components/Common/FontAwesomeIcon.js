@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const CustomIcon = React.forwardRef(({ icon, onClick, iColor }, ref) => {
+const FontIcon = React.forwardRef(({ icon, onClick, iColor }, ref) => {
   return ref ? (
     <div
       className='cursor-pointer'
@@ -23,4 +23,4 @@ const CustomIcon = React.forwardRef(({ icon, onClick, iColor }, ref) => {
   );
 });
 
-export default CustomIcon;
+export default FontIcon;

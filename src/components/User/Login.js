@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import { RoutePath } from '../constants';
+import { RouteConst } from '../../utils/constants';
 
 class Login extends Component {
   /*********************Constructor*********************/
@@ -73,13 +73,13 @@ class Login extends Component {
     const { email, password } = this.state;
     console.log(email, password);
 
-    history.push(RoutePath.Dashboard);
+    history.push(RouteConst.Dashboard);
 
     if (
       this.state.formErrors.password.isValid &&
       this.state.formErrors.email.isValid
     ) {
-      history.push(RoutePath.Dashboard);
+      history.push(RouteConst.Dashboard);
     } else {
       console.log('Form Invalid');
     }
@@ -91,7 +91,7 @@ class Login extends Component {
   render() {
     const formErrors = this.state.formErrors;
     return (
-      <div className='wrapper'>
+      <div className='rc_login'>
         <form onSubmit={this.handleSubmit}>
           <div className='form-group header'>
             <span>Member Login</span>
@@ -161,7 +161,7 @@ class Login extends Component {
             <div className='form-group col'>
               <span className='float-right'>
                 Don't have an account?
-                <Link to={RoutePath.Register} className='nav-link'>
+                <Link to={RouteConst.Register} className='nav-link'>
                   Sign Up
                 </Link>
               </span>

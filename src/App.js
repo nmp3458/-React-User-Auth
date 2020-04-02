@@ -5,12 +5,11 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import './components/fontawesome';
 
-import './App.scss';
+import './styles/App.scss';
 
-import { RoutePath } from './components/constants';
-
+import './components/Common/FontLibrary';
+import { RouteConst } from './utils/constants';
 import { Login, Register } from './components/User';
 import { Dashboard } from './components/Layout';
 
@@ -20,9 +19,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route path={RoutePath.Login} component={Login} />
-          <Route path={RoutePath.Register} component={Register} />
-          <Route path={RoutePath.Dashboard} component={Dashboard} />
+          <Route path={RouteConst.Login} component={Login} />
+          <Route path={RouteConst.Register} component={Register} />
+          <Route path={RouteConst.Dashboard} component={Dashboard} />
         </Switch>
         <Redirect to='/' />
       </Router>
