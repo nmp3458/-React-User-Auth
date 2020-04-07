@@ -1,15 +1,9 @@
-@import "bootstrap/scss/bootstrap.scss";
+@import 'bootstrap/scss/bootstrap.scss';
 
-@import './base';
+@import './_base.scss';
 
+// Component CSS
 
-// Component Css
-
-@import './components/login';
-@import './components/header';
-
-
-
-
-
-
+@import './components/_login.scss';
+@import './components/_header.scss';
+@import './components/_sidebar.scss';

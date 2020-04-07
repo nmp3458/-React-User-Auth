@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const FontIcon = React.forwardRef(({ icon, onClick, iColor }, ref) => {
+const FontIcon = React.forwardRef(({ icon, onClick, color, size }, ref) => {
   return ref ? (
     <div
       className='cursor-pointer'
@@ -14,12 +13,16 @@ const FontIcon = React.forwardRef(({ icon, onClick, iColor }, ref) => {
     >
       <FontAwesomeIcon
         icon={icon}
-        color={iColor ? iColor : 'white'}
-        size='3x'
+        color={color ? color : 'white'}
+        size={size ? size : '15x'}
       />
     </div>
   ) : (
-    <FontAwesomeIcon icon={icon} color={iColor ? iColor : 'white'} size='3x' />
+    <FontAwesomeIcon
+      icon={icon}
+      color={color ? color : 'white'}
+      size={size ? size : '15x'}
+    />
   );
 });
 

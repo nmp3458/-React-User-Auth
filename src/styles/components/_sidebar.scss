@@ -1,0 +1,57 @@
+.rc_sidebar {
+  position: relative;
+  width: 200px;
+  left: 0;
+  top: 62px;
+  background: #333547;
+  box-shadow: 0 0 13px 0 rgba(236, 236, 241, 0.44);
+}
+
+.menu {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    display: block;
+    width: 100%;
+    a {
+      display: flex;
+      padding: 12px 20px;
+      color: #8699ad;
+      position: relative;
+      text-decoration: none;
+
+      i {
+        color: #8699ad;
+        min-width: 1.75rem;
+        line-height: 24px;
+      }
+
+      &:hover {
+        color: white;
+      }
+
+      &:active {
+        background-color: #383b4e;
+        font-size: 18px;
+
+        span {
+          color: #b4c9de;
+        }
+      }
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+}
+.menu-title {
+  padding: 12px 20px !important;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  cursor: default;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #b4bfcc !important;
+  font-weight: 500;
+}

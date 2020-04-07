@@ -18,8 +18,8 @@ function App() {
     <div className='App'>
       <Router>
         <Switch>
-          <Route exact path='/' component={Login} />
-          <Route path={RouteConst.Login} component={Login} />
+          <Route exact path='/' component={Dashboard} />
+          <Route path={RouteConst.Login} component={Dashboard} />
           <Route path={RouteConst.Register} component={Register} />
           <Route path={RouteConst.Dashboard} component={Dashboard} />
         </Switch>
