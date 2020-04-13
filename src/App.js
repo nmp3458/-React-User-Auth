@@ -8,7 +8,7 @@ import {
 
 import './styles/App.scss';
 
-import './components/Common/FontLibrary';
+import './utils/fontLibrary';
 import { RouteConst } from './utils/constants';
 import { Login, Register } from './components/User';
 import { Dashboard } from './components/Layout';
