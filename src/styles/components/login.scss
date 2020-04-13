@@ -1,18 +1,7 @@
-@import './components/theme.scss';
+@import '../colors';
 
-body {
-  font-size: 14px;
-}
-
-.form-check-input {
-  margin-top: 0.4rem;
-}
-
-.cursor-pointer{
-  cursor: pointer;
-}
-
-.wrapper {
+.rc_login,
+.rc_register {
   width: 500px;
   position: relative;
   margin: auto;
@@ -54,7 +43,7 @@ body {
       right: 32px;
     }
     label.required:after {
-      content: "*";
+      content: '*';
       color: $red;
     }
 
@@ -63,32 +52,3 @@ body {
     // }
   }
 }
-
-.dash_header {
-  position: fixed;
-  left: 0;
-  right: 0;
-  width: 100%;
-  z-index: 99;
-  display: flex;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid transparent;
-  background: linear-gradient(to right, #765be6, #03adf7);
-
-  .header-desktop {
-    display: block;
-    position: absolute;
-    width: 150px;
-    height: 40px;
-    margin-top: 2px;
-    background: url(/assets/img//logo-white.png);
-    background-repeat: no-repeat;
-
-    a {
-      color: #765be6;
-    }
-  }
-}
-
-

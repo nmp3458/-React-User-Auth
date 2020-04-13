@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { RoutePath } from "../constants";
+import { RouteConst } from '../../utils/constants';
 
 class Register extends React.Component {
   render() {
     return (
-      <div className="wrapper">
+      <div className="rc_register">
         <form>
           <div className="form-group header">
             <span>Registration</span>
@@ -63,7 +63,7 @@ class Register extends React.Component {
             <div className="form-group col">
               <span className="float-right">
                 Already have an account?
-                <Link to={RoutePath.Login} className="nav-link">
+                <Link to={RouteConst.Login} className="nav-link">
                   Sign In
                 </Link>
               </span>

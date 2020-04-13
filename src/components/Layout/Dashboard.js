@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import { Header, Footer, Main } from './index';
+import { Header, Footer, Main, Sidebar } from "./index";
 
 class Dashboard extends Component {
   /*********************Render Mrthod*********************/
@@ -9,7 +9,7 @@ class Dashboard extends Component {
       <React.Fragment>
         <Header />
         <Main />
-        <Footer />
+        <Sidebar />
       </React.Fragment>
     );
   }
