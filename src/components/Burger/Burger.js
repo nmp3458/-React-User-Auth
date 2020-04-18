@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Aux from '../../hoc/Aux';
+import Hoc from '../../hoc/Hoc';
 import BurgerIngredient from './BurgerIngredient';
 import BurgerControl from './BurgerControl';
 
@@ -18,7 +18,7 @@ class Burger extends Component {
     );
 
     return (
-      <Aux>
+      <Hoc>
         <div className='burger'>
           <div className='BreadTop'>
             <div className='Seeds1'></div>
@@ -28,7 +28,7 @@ class Burger extends Component {
           <div className='BreadBottom'></div>
         </div>
         <BurgerControl controls={this.props.burgerControls} />
-      </Aux>
+      </Hoc>
     );
   }
 }
