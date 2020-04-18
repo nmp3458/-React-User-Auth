@@ -1,3 +1,19 @@
 [0328/212011.263:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
 [0328/212011.265:ERROR:exception_snapshot_win.cc(98)] thread ID 3944 not found in process
 [0328/212011.266:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0417/212911.632:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/213911.635:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/213911.636:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/214411.635:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/215911.638:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/221411.693:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/222911.860:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0417/224411.860:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/140015.582:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/141015.586:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/141015.587:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/141515.584:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/141621.667:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/142227.308:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/142644.534:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0418/143015.588:ERROR:crash_report_database_win.cc(469)] failed to stat report

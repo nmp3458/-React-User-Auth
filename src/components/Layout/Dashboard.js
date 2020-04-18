@@ -8,8 +8,8 @@ class Dashboard extends Component {
     return (
       <React.Fragment>
         <Header />
-        <Main />
         <Sidebar />
+        <Main />
       </React.Fragment>
     );
   }

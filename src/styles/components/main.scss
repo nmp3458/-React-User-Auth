@@ -1,6 +1,12 @@
 @import '../colors';
 
-.MainArea {
+.rc_main {
     position: relative;
     box-sizing: border-box;
+    left: 200px;
+    overflow: hidden;
+    top: 62px;
+    width: 70%;
 }
+
+@import './burger.scss';
